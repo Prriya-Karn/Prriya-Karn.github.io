@@ -1,0 +1,79 @@
+<!Doctype html>
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+	</head>
+	<body>
+		<form method="POST">
+
+			ENTER NUMBER <input type="text" name="a"> 
+			<br> <br>
+			ENTER NUMBER <input type="text" name="b">
+
+			<br><br>
+
+			<select name="operation">
+				<option value="add">ADD
+				</option>
+				<option value="sub">SUB
+				</option>
+				<option value="mul">MUL
+				</option>
+				<option value="div">DIV
+				</option>
+				
+			</select>
+
+			<br><br>
+			<input type="submit" name="submit"> 
+
+		</form>
+
+		<p>
+			<?php
+               if (isset($_POST['submit'])) {
+               	$a = $_POST['a'];
+               	$b = $_POST['b'];
+           $operation = $_POST['operation'];
+
+               	switch($operation){
+case 'add': $add = $a+$b;
+	echo "add is $add";
+	break; 
+
+	case 'sub':$sub = $a - $b;
+	echo "sub is $sub";
+	break;
+
+	case 'mul':$mul = $a*$b;
+	echo "mul is $mul";
+	break;
+
+	case 'div':$div = $a/$b;
+	echo "div is $div";
+	
+
+	
+               	}
+
+
+
+
+
+
+
+
+
+               }
+
+
+
+
+			?>
+		</p>
+	
+	</body>
+	</html>
